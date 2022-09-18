@@ -1,0 +1,27 @@
+name = input('Please enter your First and Last Name: ')
+print('Creating a Monthly Budget for', name)
+monthly_income = float(input('Please enter your Total Monthly income after taxes: '))
+housing = float(input('How much do you spend on Housing each month? '))
+food = float(input('How much do you spend on Food each month? '))
+transportation = float(input('How much do you spend on Transportation each month? '))
+phone = float(input('How much do you spend on Phone costs each month? '))
+utilities = float(input('How much do you spend on Utilities each month? '))
+clothing = float(input('How much do you spend on Clothes each month? ''\n'))
+
+rent = (housing / monthly_income)
+eat = (food / monthly_income)
+travel = (transportation / monthly_income)
+cell = (phone / monthly_income)
+bills = (utilities / monthly_income )
+clothes = (clothing / monthly_income)
+
+print(f'Housing takes up {rent:,.0%} of your monthly income.')
+print(f'Food takes up {eat:,.0%} of your monthly income.')
+print(f'Transportation takes up {travel:,.0%} of your monthly income.')
+print(f'Phone costs take up {cell:,.0%} of your monthly income.')
+print(f'Utilities take up {bills:,.0%} of your monthly income.')
+print(f'Clothing takes up {clothes:,.0%} of your monthly income. \n')
+
+money_left_over = (monthly_income - housing - food - transportation - phone - utilities - clothing)
+
+print(f'You have ${money_left_over:,.2f} left from your income after paying for these expenses each month')
