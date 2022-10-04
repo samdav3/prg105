@@ -7,6 +7,7 @@
     Submit your completed file
 """
 import random
+import math
 
 # TODO 5.2 - calling an existing function
 print("=" * 10, "Section 5.2 call an existing function", "=" * 10)
@@ -111,12 +112,14 @@ print("=" * 10, "Section 5.4 using local variables", "=" * 10)
 
 
 def main2():
+    name = 'Sam'
+    print(f'Hello {name}!')
     get_name()
 
 
 def get_name():
-    name = str(input('Enter your name: '))
-    print(f'Hello {name}!')
+    user_name = str(input('Enter your name: '))
+    print(f'Hello {user_name}!')
 
 
 main2()
@@ -218,15 +221,6 @@ print("=" * 10, "Section 5.9 use the math module", "=" * 10)
 # Add the import math statement at the top of this file: import math
 # Write a statement that uses the ceil function on the following variable
 # Display the result
-import math
+
 number_to_round = 4.243
-
-
-def main():
-    print(f'The number to round is {number_to_round}.')
-    answer = math.ceil(number_to_round)
-    print(f'The smalled integer that is greater than or equal to {number_to_round} is {answer}.')
-
-
-main()
-
+print(f'The ceiling value for {number_to_round} is {math.ceil(number_to_round)}.')
