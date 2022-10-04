@@ -2,17 +2,17 @@
 
 def main():
     number = int(input('Enter a whole number between 20 and 200: '))
-    while number > 100 or number < 20:
-        print('That is not a valid number.')
-        number = int(input('Enter a whole number between 20 and 200: '))
     good_number = validate(number)
-    div_2(number)
-    div_3(number)
-    div_5(number)
+    div_2(good_number)
+    div_3(good_number)
+    div_5(good_number)
 
 
 def validate(user_number):
     valid_number = user_number
+    while user_number > 100 or user_number < 20:
+        print('That is not a valid number.')
+        user_number = int(input('Enter a whole number between 20 and 200: '))
     return valid_number
 
 
