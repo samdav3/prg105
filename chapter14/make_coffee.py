@@ -6,7 +6,7 @@ def main():
     try:
         coffee_db = sqlite3.connect('coffee.db')
         coffee_cursor = coffee_db.cursor()
-        table_structure = coffee_cursor.execute('''CREATE TABLE IF NOT EXISTS Coffee
+        table_structure = ('''CREATE TABLE IF NOT EXISTS Coffee
                                         (ProdID INTEGER PRIMARY KEY NOT NULL,
                                         Product TEXT, 
                                         Category TEXT, 
@@ -16,7 +16,7 @@ def main():
 
         try:
             count = 0
-            coffee_file = open('coffeehouse_supplies.csv', 'rb')
+            coffee_file = open('coffeehouse_supplies.csv', 'r')
             for line in coffee_file:
                 coffee_data = line.strip().split(',')
                 coffee_cursor.execute('''INSERT INTO Coffee (ProdID, Product, Category, Supplier)
@@ -25,7 +25,6 @@ def main():
                 print(f'{count} records added')
             coffee_db.close()
             coffee_db.commit()
-
 
         except IndexError:
             print('IndexError: File data type is incompatible.')
